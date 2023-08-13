@@ -1,5 +1,5 @@
 # KFC Clone Website
-"Indulge in the ultimate KFC Clone experience - our app features an easy-to-use interface, simple cart management, and secure payments."
+Indulge in the ultimate KFC Clone experience - our app features an easy-to-use interface, simple cart management, and secure payments.
 
 ## Features
 
