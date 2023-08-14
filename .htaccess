@@ -1,6 +1,6 @@
 Options +MultiViews
 RewriteEngine On
-RewriteBase /php%20course-projects/KFC%20WEbsite%20better/
+RewriteBase YOUR_ROOT_PATH
 
 
 
