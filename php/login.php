@@ -15,7 +15,7 @@ if($action==="login"){
       $updateSql=mysqli_query($conn,"UPDATE user set verifCode={$code} where phone_number={$phone}");
       if($updateSql){
         $row=mysqli_fetch_assoc($sql);
-$sender="thjndocsell@gmail.com";
+$sender="YOUR_EMAIL";
 $reciever=$row['email'];
 $subject="Your Verification Code-it expires after 4 minutes";
 $message="Your verification code is $code";
@@ -92,7 +92,7 @@ else if($action==="register"){
       if($sqlInsert){
         $sqlSelect=mysqli_query($conn,"SELECT * FROM user where phone_number={$_SESSION['phone']}");
         $row=mysqli_fetch_assoc($sqlSelect);
-        $sender="thjndocsell@gmail.com";
+        $sender="YOUR_EMAIL";
         $reciever=$row['email'];
         $subject="Your Verification Code-it expires after 4 minutes";
         $message="Your verification code is $code";
