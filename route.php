@@ -2,7 +2,6 @@
 if(isset($_GET['url'])){
     
  $requestedUrl = $_GET['url'];
- echo $requestedUrl;
 switch ($requestedUrl) {
     case '':
         include 'home.php';
