@@ -42,7 +42,7 @@ buttonLogin.addEventListener('click',()=>{
                 if(xhr.status===200 && xhr.readyState===4){
                     console.log(12+" "+xhr.response);
                     if(xhr.response==="done"){
-                        location.href="otp/"; 
+                        location.href="otp"; 
                     }
                     else if(xhr.response==="notRegistered"){
                         location.href="createProfile";
