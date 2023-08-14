@@ -1,0 +1,14 @@
+Options +MultiViews
+RewriteEngine On
+RewriteBase /php%20course-projects/KFC%20WEbsite%20better/
+
+
+
+
+# Redirect requests to route.php for custom PHP routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ route.php?url=$1 [QSA,L]
+
+
+

@@ -1,0 +1,1099 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;800&family=Rubik:wght@300;400;500;600&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik';
+}
+
+/* 
+
+.sitelight{
+    background-color:rgb(237, 235, 235);
+
+}
+
+.sitedark{
+    background-color: #424649;
+}
+ */
+
+
+html{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+.menuopened{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 200;
+    display: none;
+    transition: .6s;
+    }
+  
+    .menuopened.menuClose{
+      display: inline;
+      transition: .6s;
+      }
+
+/*********
+*HEADER 
+*********/
+header{
+    width: 100%;
+    background-color: #ffffff;
+    position: fixed;
+z-index: 300;
+margin-top: 0;
+transition: 0.3s;
+
+}
+
+main{
+    position: relative;
+}
+
+
+/*-----------
+*HEADER  DESKTOP
+-----------*/
+
+header .desktop-header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    border: 2px solid white;
+}
+
+
+/*-----------
+*HEADER  DESKTOP LEFT-SIDE
+-----------*/
+
+header .desktop-header .header-left {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 680px;
+    height: 100%;
+}
+
+header .desktop-header .header-left .change{
+    display: none;
+    width: 90px;
+    height: 40px;
+}
+
+
+header .desktop-header .header-left button{
+    width: 115px;
+    height: 40px;
+    padding: 5px 0;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    border: 0;
+border-radius: 10px;
+box-shadow: 10px 5px 5px silver,-10px -5px 5px white ;
+cursor: pointer;
+transition: .8s;
+}
+
+header .desktop-header .header-left button i{
+    color: darkred;
+    font-size: 20px;
+}
+
+header .desktop-header .header-left button.current{
+    box-shadow: 5px 5px 5px darkred;
+
+}
+
+header .desktop-header .header-left button:hover:not([class="current select"]){
+border: 1px solid black;
+transition: .8s;
+}
+
+header .desktop-header .header-left .ri-menu-line{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+header .desktop-header .header-left button img{
+    width: 20px;
+    height: 20px;
+   
+}
+
+
+.hidden-menu{
+    display: none;
+    transition: .7s;
+}
+
+
+header .desktop-header .desktop-menu{
+    position: absolute;
+    left: 0;
+    top: 72px;
+    width: 350px;
+    height: 50rem;
+    background-color: #fefefe;
+    overflow-y: scroll;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+transition: .7s;
+z-index: -2;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-user{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-user i{
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-user p{
+    font-family: 200;
+    font-size: 12px;
+}
+header .desktop-header .desktop-menu .desktop-menu-user p span{
+    font-weight: 800;
+}
+header .desktop-header .desktop-menu .desktop-menu-user button{
+    width: 100px;
+    box-shadow: none;
+    height: 40px;
+    color: red;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-lang-country{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+justify-content: space-between;
+}
+header .desktop-header .desktop-menu .desktop-menu-lang-country .desktop-menu-lang{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+header .desktop-header .desktop-menu .desktop-menu-lang-country .desktop-menu-lang button{
+width: 100px;
+box-shadow: none;
+height: 40px;
+color: white;
+background-color: brown;
+margin-right: 5px;
+}
+
+
+
+header .desktop-header .desktop-menu .desktop-menu-lang-country .desktop-menu-country{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+header .desktop-header .desktop-menu .desktop-menu-lang-country .desktop-menu-country p{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+
+header .desktop-header .desktop-menu .desktop-menu-lang-country .desktop-menu-country img{
+    width: 30px;
+    height: 30px;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-order{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-order :is(a,a:any-link){
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    display: block;
+   transition: .7s;
+   display: flex;
+   align-items: center;
+   color: black;
+   font-weight: 900;
+   font-size: 15px;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-order i{
+    padding-right: 20px;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-order a:first-child{
+    margin-top: 20px;
+}
+
+
+header .desktop-header .desktop-menu .desktop-menu-order a:last-child{
+    margin-bottom: 20px;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-order a:hover i{
+color: black;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-order a:hover{
+    background-color: rgb(226, 222, 222);
+    color: red;
+}
+
+
+header .desktop-header .desktop-menu .desktop-menu-others{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header .desktop-header .desktop-menu .desktop-menu-others :is(a,a:any-link){
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    display: block;
+   transition: .7s;
+   display: flex;
+   align-items: center;
+   color: black;
+   font-weight: 900;
+   font-size: 15px;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-others a:hover{
+    background-color: rgb(226, 222, 222);
+    text-decoration: underline;
+}
+
+
+header .desktop-header .desktop-menu .desktop-menu-others a:first-child{
+    margin-top: 20px;
+}
+
+
+header .desktop-header .desktop-menu .desktop-menu-others a:last-child{
+    margin-bottom: 20px;
+}
+
+
+header .desktop-header .desktop-menu .desktop-menu-others-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-others-2 a{
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    display: block;
+   transition: .7s;
+   display: flex;
+   align-items: center;
+   color: black;
+   font-weight: 900;
+   font-size: 20px;
+   text-transform: uppercase;
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+
+header .desktop-header .desktop-menu .desktop-menu-others-2 i{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+height: 30px;
+margin-right: 10px;
+
+}
+header .desktop-header .desktop-menu .desktop-menu-others-2 a:hover{
+    background-color: rgb(236, 228, 228);
+}
+
+
+header .desktop-header .desktop-menu  .desktop-menu-toggleMode{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header .desktop-header .desktop-menu  .desktop-menu-toggleMode h4{
+    font-weight: 900;
+    font-size: 20px;
+    color: red;
+}
+
+header .desktop-header .desktop-menu  .desktop-menu-toggleMode label{
+cursor: pointer;
+width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+text-align: center;
+align-items: center;
+
+}
+
+header .desktop-header .desktop-menu  .desktop-menu-toggleMode .lightMode{
+ background: linear-gradient(145deg,#e1e1e1,white);
+    box-shadow: 3px 3px 4px #b6b4b4,-3px -3px 4px white; 
+   
+}
+
+header .desktop-header .desktop-menu  .desktop-menu-toggleMode .label i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+header .desktop-header .desktop-menu  .desktop-menu-toggleMode .lightMode .ri-sun-fill{
+color: #151d2a;
+}
+
+header .desktop-header .desktop-menu  .desktop-menu-toggleMode .darkMode{
+background : #151d2a;
+box-shadow: 1px 1px 3px #0e131b,-1px -1px 3px #1c2739;
+
+}
+header .desktop-header .desktop-menu  .desktop-menu-toggleMode .darkMode .ri-moon-line{
+    color: white;
+    }
+    
+
+header .desktop-header .desktop-menu hr{
+    width: 80%;
+    margin-inline: auto;
+}
+
+header .desktop-header .desktop-menu::-webkit-scrollbar{
+width: 6px;
+background-color: silver;
+} 
+   
+  /* Handle */
+  header .desktop-header .desktop-menu::-webkit-scrollbar-thumb {
+    background: rgb(141, 140, 140); 
+
+  } 
+
+/*-----------
+* DESKTOP HEADER  Center
+-----------*/
+
+header .header-center {
+    width: 10%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+header .header-center img{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+
+/*-----------
+* DESKTOP HEADER  RIGHT-SIDE
+-----------*/
+
+header .desktop-header .header-right {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header .desktop-header .header-right button{
+    margin-inline: 10px;
+    width: 70px;
+    height: 50px;
+border-radius: 6px;
+padding: 7px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+font-weight: 700;
+background-color: white;
+}
+header .desktop-header .header-right button:last-child{
+    background-color: brown;
+color: white;
+}
+
+
+
+
+header .desktop-header .header-right .icon-large{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 10px;
+cursor: pointer;
+position: relative;
+}
+
+header .desktop-header .header-right .icon-large .fly-item{
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    font-size: 10px;
+background: darkred;
+border-radius: 50%;
+width: 15px;
+height: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+
+header .desktop-header .header-right .icon-large .cart-tab{
+    width: 400px;
+    background-color: red;
+    height: 200px;
+    position: absolute;
+    top: 30px;
+    left: -370px;
+    border-radius: 25px;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    box-shadow: 2px 2px 5px red,-2px -2px 5px red;
+    z-index: 100;
+    border: 2px solid red;
+    display: none;
+    transition: .8s;
+}
+
+
+
+header .desktop-header .header-right .icon-large .cart-tab button{
+    width: 200px;
+    transition: .6s;
+}
+
+header .desktop-header .header-right .icon-large .cart-tab button:hover{
+    background-color: red;
+}
+
+
+
+
+
+
+
+/*-----------
+*MOBILE HEADER
+-----------*/
+header .mobile-header{
+    display: none; 
+    justify-content: space-evenly;
+    align-items: start;
+    width: 100%;
+    position: relative;
+
+}
+
+
+/*-----------
+*HEADER  MOBILE LEFT-SIDE
+-----------*/
+
+header .mobile-header .header-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 25px;
+    padding-left: 10px;
+    width: 20%;
+    height: 100%;
+}
+
+
+
+
+header .mobile-header .header-left .ri-menu-line{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.Mobile-hidden-menu{
+    display: none;
+/*     transition: .7s;
+ */}
+
+
+header .mobile-header .mobile-menu{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    overflow-y: scroll;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+header .mobile-header .mobile-menu.display{
+    animation: headerDisplay;
+    animation-duration: .3s;
+    animation-delay: 0;
+}
+
+
+header .mobile-header .mobile-menu.close{
+    /* animation: headerClose;
+    animation-duration: .3s;
+    animation-delay: 0; */
+    transform: translateX(-10000px);
+}
+
+header .mobile-header .mobile-menu .mobile-menu-user{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-user i{
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-user p{
+    font-family: 200;
+    font-size: 8px;
+}
+header .mobile-header .mobile-menu .mobile-menu-user p span{
+    font-weight: 800;
+}
+header .mobile-header .mobile-menu .mobile-menu-user button{
+    width: 50px;
+    border-radius: 5px;
+    box-shadow: none;
+    height: 30px;
+    color: red;
+    background-color: white;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-lang-country{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+justify-content: space-between;
+font-size: 12px;
+}
+header .mobile-header .mobile-menu .mobile-menu-lang-country .mobile-menu-lang{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+header .mobile-header .mobile-menu .mobile-menu-lang-country .mobile-menu-lang button{
+width: 50px;
+box-shadow: none;
+border-radius: 5px;
+height: 30px;
+color: white;
+background-color: brown;
+margin-right: 7px;
+cursor: pointer;
+}
+
+
+
+header .mobile-header .mobile-menu .mobile-menu-lang-country .mobile-menu-country{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+header .mobile-header .mobile-menu .mobile-menu-lang-country .mobile-menu-country p{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+
+header .mobile-header .mobile-menu .mobile-menu-lang-country .mobile-menu-country img{
+    width: 20px;
+    height: 20px;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-order{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-order :is(a,a:any-link){
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    display: block;
+   transition: .7s;
+   display: flex;
+   align-items: center;
+   color: black;
+   font-weight: 900;
+   font-size: 10px;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-order i{
+    padding-right: 20px;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-order a:first-child{
+    margin-top: 20px;
+}
+
+
+header .mobile-header .mobile-menu .mobile-menu-order a:last-child{
+    margin-bottom: 20px;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-order a:hover i{
+color: black;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-order a:hover{
+    background-color: rgb(226, 222, 222);
+    color: red;
+}
+
+
+header .mobile-header .mobile-menu .mobile-menu-others{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header .mobile-header .mobile-menu .mobile-menu-others :is(a,a:any-link){
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    display: block;
+   transition: .7s;
+   display: flex;
+   align-items: center;
+   color: black;
+   font-weight: 900;
+   font-size: 10px;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-others a:hover{
+    background-color: rgb(226, 222, 222);
+    text-decoration: underline;
+}
+
+
+header .mobile-header .mobile-menu .mobile-menu-others a:first-child{
+    margin-top: 20px;
+}
+
+
+header .mobile-header .mobile-menu .mobile-menu-others a:last-child{
+    margin-bottom: 20px;
+}
+
+
+header .mobile-header .mobile-menu .mobile-menu-others-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-others-2 a{
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    display: block;
+   transition: .7s;
+   display: flex;
+   align-items: center;
+   color: black;
+   font-weight: 900;
+   font-size: 12px;
+   text-transform: uppercase;
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+
+header .mobile-header .mobile-menu .mobile-menu-others-2 i{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+height: 30px;
+margin-right: 10px;
+
+}
+header .mobile-header .mobile-menu .mobile-menu-others-2 a:hover{
+    background-color: rgb(236, 228, 228);
+}
+
+
+header .mobile-header .mobile-menu  .mobile-menu-toggleMode{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header .mobile-header .mobile-menu  .mobile-menu-toggleMode h4{
+    font-weight: 900;
+    font-size: 15px;
+    color: red;
+}
+
+header .mobile-header .mobile-menu  .mobile-menu-toggleMode label{
+cursor: pointer;
+width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+text-align: center;
+align-items: center;
+
+}
+
+header .mobile-header .mobile-menu  .mobile-menu-toggleMode .lightMode{
+ background: linear-gradient(145deg,#e1e1e1,white);
+    box-shadow: 3px 3px 4px #b6b4b4,-3px -3px 4px white; 
+   
+}
+
+header .mobile-header .mobile-menu  .mobile-menu-toggleMode .label i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+header .mobile-header .mobile-menu  .mobile-menu-toggleMode .lightMode .ri-sun-fill{
+color: #151d2a;
+}
+
+header .mobile-header .mobile-menu  .mobile-menu-toggleMode .darkMode{
+background : #151d2a;
+box-shadow: 1px 1px 3px #0e131b,-1px -1px 3px #1c2739;
+
+}
+header .mobile-header .mobile-menu  .mobile-menu-toggleMode .darkMode .ri-moon-line{
+    color: white;
+    }
+    
+
+header .mobile-header .mobile-menu hr{
+    width: 80%;
+    margin-inline: auto;
+}
+
+header .mobile-header .mobile-menu::-webkit-scrollbar{
+width: 6px;
+background-color: silver;
+} 
+   
+  /* Handle */
+  header .mobile-header .mobile-menu::-webkit-scrollbar-thumb {
+    background: rgb(141, 140, 140); 
+
+  } 
+
+/*-----------
+* MOBILE HEADER  Center
+-----------*/
+
+header  .mobile-header .header-center {
+    width: 60%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+}
+
+
+header .mobile-header .header-center .mobile-header-center-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    gap: 27px;
+    transition: .5s;
+}
+
+
+
+header .mobile-header .header-center .mobile-header-center-buttons p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2vw;
+    align-items: center;
+    white-space: nowrap;
+    transition: .5s;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+header .mobile-header .header-center img{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+
+header .mobile-header .header-center button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid silver;
+    outline: 0;
+    transition: .5s;
+background-color: rgba(245, 245, 245, 0.877);
+}
+
+header .mobile-header .header-center .mobile-header-center-buttons .current.mobileSelect{
+    border: 2px solid red;
+}
+
+
+header .mobile-header .header-center button img{
+    width: 30px;
+    height: 30px;
+
+}
+
+
+
+/*-----------
+* MOBILE HEADER  RIGHT-SIDE
+-----------*/
+
+header .mobile-header .header-right {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    padding-top: 22px;
+    justify-content: flex-end;
+}
+
+header .mobile-header .header-right button{
+    margin-inline: 10px;
+    width: 50px;
+    height: 30px;
+border-radius: 6px;
+padding: 7px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+font-weight: 700;
+background-color: white;
+}
+header .mobile-header .header-right button:last-child{
+    background-color: brown;
+color: white;
+}
+
+
+
+
+header .mobile-header .header-right .icon-large{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 10px;
+cursor: pointer;
+position: relative;
+}
+
+header .mobile-header .header-right .icon-large .fly-item{
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    font-size: 10px;
+background: darkred;
+border-radius: 50%;
+width: 15px;
+height: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+
+header .mobile-header .header-right .icon-large .cart-tab{
+    width: 400px;
+    background-color: red;
+    height: 200px;
+    position: absolute;
+    top: 30px;
+    left: -370px;
+    border-radius: 25px;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    box-shadow: 5px 5px 5px red,-5px -5px 5px red;
+    z-index: 100;
+    border: 2px solid red;
+    display: none;
+    transition: .8s;
+}
+
+header .mobile-header .header-right .icon-large .cart-tab button{
+    width: 200px;
+    transition: .6s;
+}
+
+header .mobile-header .header-right .icon-large .cart-tab button:hover{
+    background-color: red;
+}
+
+
+
+
+
+/*ANIMATIONS AND MEDIAS */
+
+@media screen and (max-width:1362px) {
+    header .desktop-header .header-left .select{
+        display: none;
+    }
+    header .desktop-header .header-left .change{
+        display: flex;
+    }
+    
+}
+
+@media screen and (max-width:1023px) {
+    header .desktop-header{
+        display: none;
+    }
+    header .mobile-header{
+        display: flex;
+    }
+}
+
+@keyframes headerDisplay {
+ 
+0%{
+    left: -1000px;
+}
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes headerClose {
+    0%{
+        left: 0;
+    }
+
+    100%{
+        transform: translateX(-10000px);
+    }
+}

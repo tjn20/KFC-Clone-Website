@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;800&family=Rubik:wght@300;400;500;600&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+font-family: 'Poppins',sans-serif;
+}
+
+body{
+    height: 100vh;
+}
+.wrap{
+    position: relative;
+    height: 100%;
+width: 100%;
+}
+
+
+.wrap .background{
+    background: url(images/backgroundtryout.png);
+height: 100%;
+width: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-blend-mode: hard-light;
+position: absolute;
+z-index: -1;
+}
+
+.wrap .page{
+    z-index: 2;
+    position: absolute;
+   width: 100%;
+   height: 100%;
+   background: transparent;
+   backdrop-filter: blur(.8px);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 8%;
+transition: .3s;
+}
+
+.wrap .page .close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 25%;
+    font-size: 25px;
+    font-weight: 800;
+border: none;
+outline: none;
+cursor: pointer;
+margin-bottom: 20px;
+}
+
+.content{
+    border-radius: 25px;
+    overflow: hidden;
+    width: 400px;
+}
+
+.login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f3f6;
+    border-radius: 25px;
+}
+
+.login form{
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+display: flex;
+flex-direction: column;
+}
+
+.login form h4{
+    color: rgb(31, 31, 31);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0; /* Optional: Remove any default margin */
+}
+
+.login .phone-number span{
+    margin-right: 5px;
+    font-weight: 600;
+    font-size: 13px;
+    color: black;
+}
+
+.login .phone-number input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    width: 80%;
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+.login .phone-number input:valid{
+    border-color: blue;
+    transition: .3s;
+}
+
+.login .phone-number input::placeholder{
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.login form .error-message{
+    color: red;
+    font-size: 10px;
+margin-left: 11%;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.login form .submit{
+    width: 100%;
+    font-size: 17px;
+    padding: 10px;
+    color: white;
+    background-color: #a9bdd0;
+    outline: none;
+    border: none;
+    transition: .2s;
+    border-radius: 5px;
+}
+
+.login form .submit.active{
+    background-color: #e4002b;
+    transition: .3s;
+    cursor: pointer;
+}
+.login form .submit.active:hover{
+    background-color: maroon;
+}
+
+/*
+* OTP
+*/
+
+.otp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #e5e5e5;
+}
+.otp .header{
+    background-color: white;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-size: 13px;
+color: black;
+font-weight: 700;
+padding-top: 10px;
+}
+.otp .header span{
+    color: red;
+}
+
+.otp form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.otp form .inputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.otp form .inputs input{
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #a9bdd0;
+    background-color: transparent;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+    color: black;
+    font-weight: 700;
+}
+
+.otp .error{
+    display: none;
+    color: #fb8f62;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.otp .text{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.otp .text span{
+    font-weight: 600;
+}
+
+.otp .text button{
+    color: grey;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.otp .text button.active{
+    color: blue;
+    cursor: pointer;
+}
+
+.otp .submit{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: .3s;
+}
+
+.otp .submit.active{
+    background-color: #e4002b;
+    color: white;
+    cursor: pointer;
+}
+
+/*
+* PROFILE
+*/
+
+.create-profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f3f6;
+width: 100%;
+}
+.create-profile .header{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.create-profile .header span{
+    position: absolute;
+    width: 20px;
+    height: 6px;
+    top: 90%;
+    background-color: #e4002b;
+
+}
+.create-profile form{
+    margin-top: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+justify-content: space-between;
+background-color: white;
+margin-bottom: 10px;
+
+}
+
+.create-profile form input{
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    font: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+
+.create-profile form input:valid{
+    background-color: transparent;
+}
+
+.create-profile form .submit{
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transition: .3s;
+
+}
+
+.create-profile form .submit.active{
+    background-color: #e4002b;
+    color:white;
+cursor: pointer;
+}
