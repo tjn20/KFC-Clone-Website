@@ -1,6 +1,6 @@
 Options +MultiViews
 RewriteEngine On
-RewriteBase /php%20course-projects/KFC%20WEbsite/
+RewriteBase YOUR_ROOT_PATH
 
 
 # Redirect requests to route.php for custom PHP routing
