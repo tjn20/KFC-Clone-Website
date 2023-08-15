@@ -1,7 +1,7 @@
 const form=document.querySelector('form'),
 nameInput=form.querySelector('.name'),
 close=document.querySelector('.close'),
-
+errorMessage=document.querySelector('.error'),
 emailInput=form.querySelector('.email'),
 button=document.querySelector('.submit');
 
@@ -42,7 +42,6 @@ nameInput.addEventListener('keyup',()=>{
 
 button.addEventListener('click',()=>{
     if(button.classList.contains('active')){
-        console.log(123);
         const xhr= new XMLHttpRequest();
         xhr.open("POST","php/login.php",true);
         xhr.onreadystatechange= function(){
@@ -50,16 +49,18 @@ button.addEventListener('click',()=>{
                 if(xhr.status===200 && xhr.readyState===4){
                     if(xhr.response==="done"){
                         location.href="otp";
+                        errorMessage.style.display="none";
 
                     }
+                    else{
+                        errorMessage.style.display="block";
+                    errorMessage.textContent=xhr.response;    
+                }
                 }
             }
         }
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-/*         const formData= new FormData(form);
- */        xhr.send("name="+nameInput.value+"&email="+emailInput.value+"&action=register");
+        xhr.send("name="+nameInput.value+"&email="+emailInput.value+"&action=register");
     }
-    else
-    console.log("not");
 
 });

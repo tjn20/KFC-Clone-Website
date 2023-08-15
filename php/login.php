@@ -11,17 +11,13 @@ if($action==="login"){
 
     $sql=mysqli_query($conn,"SELECT * FROM user where phone_number={$phone}");
     if(mysqli_num_rows($sql)>0){
-        $code=rand(9999, 1111);
+      $code=rand(9999, 1111);
       $updateSql=mysqli_query($conn,"UPDATE user set verifCode={$code} where phone_number={$phone}");
       if($updateSql){
         $row=mysqli_fetch_assoc($sql);
-$sender="YOUR_EMAIL";
-$reciever=$row['email'];
-$subject="Your Verification Code-it expires after 4 minutes";
-$message="Your verification code is $code";
-        if(mail($reciever,$subject,$message,$sender)){
-            echo "done";
-            $_SESSION['email']=$row['email'];
+        if(sendMail($code,$row['email'])){
+          $_SESSION['email']=$row['email'];  
+          echo "done";
         }
 
       } 
@@ -87,16 +83,18 @@ else if($action==="register"){
 
   if(!empty($email) && !empty($name)){
     if(filter_var($email,FILTER_VALIDATE_EMAIL)){
-      $code=rand(9999, 1111);
+      $sqlCheck=mysqli_query($conn,"SELECT * FROM user where email='{$email}'");
+      if(mysqli_num_rows($sqlCheck)>0){
+echo "This email already exists!";
+      }
+      else{
+        $code=rand(9999, 1111);
       $sqlInsert=mysqli_query($conn,"INSERT INTO user(name,phone_number,email,verifCode,status) VALUES ('{$name}',{$_SESSION['phone']},'{$email}',{$code},'not-verified')");
       if($sqlInsert){
         $sqlSelect=mysqli_query($conn,"SELECT * FROM user where phone_number={$_SESSION['phone']}");
         $row=mysqli_fetch_assoc($sqlSelect);
-        $sender="YOUR_EMAIL";
-        $reciever=$row['email'];
-        $subject="Your Verification Code-it expires after 4 minutes";
-        $message="Your verification code is $code";
-                if(mail($reciever,$subject,$message,$sender)){
+    
+                if(sendMail($code,$row['email'])){
                     $_SESSION['phone']="";
                     session_unset();
                     $_SESSION['email']=$row['email'];
@@ -108,7 +106,8 @@ else if($action==="register"){
               } 
         else     
         echo "something wrong happened"; 
-    }
+            }
+      }
   }
 }
 else{
@@ -118,6 +117,17 @@ else{
   
   echo "done";
 
+}
+
+function sendMail($code,$email){
+  $sender="YOUR_EMAIL";
+  $reciever=$email;
+  $subject="Your Verification Code-it expires after 4 minutes";
+  $message="Your verification code is $code";
+          if(mail($reciever,$subject,$message,$sender))
+return true;
+          else
+return true;
 }
 
 ?>

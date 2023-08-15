@@ -309,6 +309,13 @@ margin-bottom: 10px;
 
 }
 
+.create-profile form span{
+    color: red;
+    margin-bottom: 10px;
+    font-size: 13px;
+    display: none;
+}
+
 .create-profile form input{
     margin-bottom: 20px;
     border: none;

@@ -30,6 +30,7 @@ header("Location: login");
             <input type="text" placeholder="Name*" max="30" name="name" onkeydown="return /[a-z]/i.test(event.key)" class="name">
             <input type="number" name="number" placeholder="MOBILE NUMBER*" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="phone" onkeypress="return (event.charCode != 32) && (event.charCode != 45) &&(event.charCode != 43)"  disabled value="<?php echo $_SESSION['phone']?>">
     <input type="email" name="email" placeholder="Email*" maxlength="200" onkeypress="return event.charCode != 32" class="email">
+    <span class="error"></span>
     <button class="submit">SAVE</button>
         </form>
     </div>
