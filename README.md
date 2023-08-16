@@ -1,6 +1,6 @@
 # KFC Clone Website
 Indulge in the ultimate KFC Clone experience - our app features an easy-to-use interface, simple cart management, and secure payments.
-![Uploading image.png…]()
+![image](https://github.com/tjn20/KFC-Clone-Website/assets/142109365/c9481b50-b73f-4fe3-87a5-053394b1d50e)
 ## Features
 
 * View Cart: Easily keep track of your selections with the "View Cart" feature. See a summary of the items you've added before proceeding to checkout.
