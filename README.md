@@ -1,6 +1,8 @@
 # KFC Clone Website
 Indulge in the ultimate KFC Clone experience - our app features an easy-to-use interface, simple cart management, and secure payments.
 
+[Live App](https://kfccloneweb.infinityfreeapp.com/)
+
 ![image](https://github.com/tjn20/KFC-Clone-Website/assets/142109365/18275e7e-143b-4879-a684-62794fc65629)
 
 ![image](https://github.com/tjn20/KFC-Clone-Website/assets/142109365/c9481b50-b73f-4fe3-87a5-053394b1d50e)
